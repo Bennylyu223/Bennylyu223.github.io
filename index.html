@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>terrarum的个人博客</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        body { font-family: Arial, sans-serif; }
+        #posts { margin-top: 20px; }
+        .post { border: 1px solid #ccc; padding: 10px; margin-bottom: 10px; }
+    </style>
+</head>
+<body>
+    <h1>terrarum的个人博客</h1>
+    <button id="loadPosts">加载文章</button>
+    <button id="btn">haha</button>
+    <div id="posts"></div>
+
+    <script>
+        $(document).ready(function() {
+            $('#loadPosts').click(function() {
+                $('#posts').append('<div class="post">这是一个新文章!</div>');
+            });
+        });
+
+        document.getElementById("btn").onclick = ajaxRequest;
+
+        function ajaxRequest () {
+            var xhr = new XMLHttpRequest();
+
+            xhr.open("GET", "https://www.w3cschool.cn/statics/demosource/ajax_info.txt", true);
+            xhr.send();
+
+            xhr.onreadystatechange = function(){
+                if (xhr.readyState === 4 && xhr.status === 200) {
+                    document.getElementById("view").innerHTML = xhr.responseText;
+                }                
+            }
+        }
+    </script>
+</body>
+</html>
