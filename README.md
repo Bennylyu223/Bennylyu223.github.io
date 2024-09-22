@@ -11,8 +11,6 @@
 ### 1. 新建私人仓库
 >Bennylyu223.github.io.git
 
-### 2. 试着使用git
-在本项目的创建中，掌握git的基本命令与概念。
 
 
 ### 2. try something git
